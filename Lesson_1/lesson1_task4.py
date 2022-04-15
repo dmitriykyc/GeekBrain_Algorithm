@@ -9,6 +9,7 @@ import random
 Например, если надо получить случайный символ от 'a' до 'f', то вводятся эти символы.
 Программа должна вывести на экран любой символ алфавита от 'a' до 'f' включительно.
 """
+print(ord('a'))
 
 which_test = int(input('Наберите: \n'
                        '1 - чтобы получить случайное целое число\n'
@@ -29,11 +30,10 @@ elif which_test == 2:
     random_num = random.uniform(start_num, finish_num)
     print(f'Результат: {random_num}')
 elif which_test == 3:
-    letters = 'abcdefghijklmnopqrstuvwxyz'
     print('Я выведу случайную букву из диапазона!')
-    start_letter = letters.index(input('Введите стартовую букву: '))
-    finish_letter = letters.index(input('Введите конечную букву: '))
-    result_letter = letters[random.randint(start_letter, finish_letter)]
-    print(f'Случайная буква из диапазона: {result_letter}')
+    start_letter = ord(input('Введите стартовую букву: '))
+    finish_letter = ord(input('Введите конечную букву: '))
+    result_letter = random.randint(start_letter, finish_letter)
+    print(f'Случайная буква из диапазона: {chr(result_letter)}')
 else:
     print('Вы обещали быть идеальным человеком, но всё пошло не по плану, запустите ещё разок')
